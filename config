@@ -15,7 +15,7 @@
 # DISTRIBUTION and SETUP Dependent Variables ---------------#
 set $xsl_c xfce4-session-logout --fast
 
-#===========================================================#
+# i3wm (only) Dependent Variables --------------------------#
 set $w_k Mod4
 set $a_k Mod1
 set $s_k Shift
@@ -97,8 +97,10 @@ bindsym $w_k+8 workspace 8
 bindsym $w_k+9 workspace 9
 bindsym $w_k+0 workspace 10
 
-# MOVE focused container to WHICH workspace-----------------#
-# and GO TO that workspace----------------------------------#
+#-----------------------------------------------------------#
+# MOVE focused container to WHICH workspace and GO TO that  #
+# workspace                                                 #
+#-----------------------------------------------------------#
 bindsym $w_k+$s_k+1 $mcw 1; workspace 1
 bindsym $w_k+$s_k+2 $mcw 2; workspace 2
 bindsym $w_k+$s_k+3 $mcw 3; workspace 3
@@ -109,6 +111,7 @@ bindsym $w_k+$s_k+7 $mcw 7; workspace 7
 bindsym $w_k+$s_k+8 $mcw 8; workspace 8
 bindsym $w_k+$s_k+9 $mcw 9; workspace 9
 bindsym $w_k+$s_k+0 $mcw 10; workspace 10
+
 # MOUSE focus-----------------------------------------------#
 focus_follows_mouse no
 
