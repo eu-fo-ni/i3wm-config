@@ -73,13 +73,13 @@ bindsym $w_k+s layout stacking
 bindsym $w_k+w layout tabbed
 # CONTAINER LAYOUT: TOGGLE Split Layout---------------------#
 bindsym $w_k+e layout toggle split
-#	Toggle FULLSCREEN mode for the FOCUSED window-------------#
+# Toggle FULLSCREEN mode for the FOCUSED window-------------#
 bindsym $w_k+f fullscreen toggle
 # Change FOCUS between TILED and FLOATING windows-----------#
 bindsym $w_k+space focus mode_toggle
-#	TILING/FLOATING windows toggle----------------------------#
+# TILING/FLOATING windows toggle----------------------------#
 bindsym $w_k+$s_k+space floating toggle
-#	FOCUS the parent container--------------------------------#
+# FOCUS the parent container--------------------------------#
 bindsym $w_k+a focus parent
 # FOCUS the child container---------------------------------#
 bindsym $w_k+d focus child
@@ -117,7 +117,7 @@ bindsym Print $exe scrot -p $s_s
 bindsym $c_k+Print $exe scrot -ubp $w_s
 
 # Window COLORS---------------------------------------------#
-# class                 border     backgr.   text      indic.
+# class                 border  backgr. text    indic.
 client.focused          #d64937 #72f272 #2D2D2D #d45500
 client.focused_inactive #2d2d2d #414A4C #dcdcdc #708090
 client.unfocused        #2D2D2D #2d2d2d #dcdcdc #292d2e
@@ -152,7 +152,7 @@ bindsym $w_k+$s_k+c reload
 bindsym $w_k+$s_k+r restart
 # RESIZE Window---------------------------------------------#
 # NOTE: The same result is achieved HOLDING                 #
-#				Mod1($w_k)+MOUSE Dragging using RIGHT Button        #
+#       Mod1($w_k)+MOUSE Dragging using RIGHT Button        #
 #-----------------------------------------------------------#
 mode "Resize Window"
 {
