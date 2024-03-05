@@ -10,9 +10,11 @@
 # Please see http://i3wm.org/docs/userguide.html for a      #
 # complete reference!                                       #
 #############################################################
+
 # VARIABLES-------------------------------------------------#
-#=DISTRIBUTION and SETUP Dependent Variables================#
+# DISTRIBUTION and SETUP Dependent Variables ---------------#
 set $xsl_c xfce4-session-logout --fast
+
 #===========================================================#
 set $w_k Mod4
 set $a_k Mod1
@@ -210,11 +212,12 @@ bar
 		binding_mode       #90000099 #90000099 #ffffff
     #-------------------------------------------------------#
 	}
+
 	# STATUS Bar Snipping Tool (Requires imagemagick)---------#
 	bindsym --release button3 $exe\
 		import $HOME/Pictures/screenshots/snippet.jpg\
 		&& thunar $HOME/Pictures/screenshots/
-#	bindsym button3 exec --no-startup-id jgmenu_run
+
 	# SOUND Mute Toggle---------------------------------------#
 	bindsym --release button2 $exe $tm
 }
@@ -223,10 +226,6 @@ bar
 # LOGIN Picture, SPLASH Sreen, WALLPAPER Change, etc.-------#
 $e_a ~/.config/i3/scripts/change00.sh
 bindsym $w_k+p $exe ~/.config/i3/scripts/change00.sh
-bindsym $w_k+o $exe	~/.config/i3/scripts/change01.sh
-bindsym $w_k+i $exe	~/.config/i3/scripts/change09.sh
-#bindsym $w_k+u $exe	~/.config/i3/scripts/slideshow01.sh
-#bindsym $w_k+y $exe	~/.config/i3/scripts/slideshow.sh
 
 # MEDIA Players' Unified Simple Controls--------------------#
 bindsym $w_k+F10				$exe playerctl -p %any play-pause
@@ -255,7 +254,6 @@ bindsym $w_k+$a_k+F10					$exe $tm
 #-----------------------------------------------------------#
 # OFF by DEFAULT as i3wm starts-----------------------------#
 $e_a synclient TouchPadOff=1
-#$e_a gromit-mpx
 # Turn ON Touch Pad-----------------------------------------#
 bindsym $a_k+t $exe synclient TouchPadOff=0
 
@@ -294,57 +292,51 @@ for_window [class="Rhythmbox"] $f_e
 for_window [class="Gromit-mpx"] $f_e
 
 # ASSIGN specific applications to specific WORKSPACE--------#
-#assign [class="Gimp-2.10"]	10
-#assign [class="Gthumb"]		10
-#assign [class="Ristretto"]	10
-#assign [class="Thunar"]		10
+assign [class="Gimp-2.10"]	10
 
 # MAKE Some Windows Automatically GO to SRATCHPAD-----------#
-#for_window [class="Qalculate-gtk"] $m_s
-#for_window [class="Vlc"] $m_s
-#for_window [class="Parole"] $m_s
-#for_window [class="Rhythmbox"] $m_s
+for_window [class="Qalculate-gtk"] $m_s
 
 # SESSION: LOGOUT (CHOOSE Action)---------------------------#
 bindsym $w_k+F4 $exe $xsl_c
+
 # LOCK Screen-----------------------------------------------#
 bindsym $c_k+$a_k+l $exe ~/.config/i3/scripts/lock.sh
+
 # xfce4 Task Manager----------------------------------------#
 bindsym $c_k+$s_k+$a_k+Delete $exe xfce4-taskmanager
 
 # xfce4-panel and i3bar=====================================#
 # Load PANEL if needed--------------------------------------#
 bindsym $w_k+bracketleft	$exe xfce4-panel
+
 # Quit PANEL if it feels to get in the way------------------#
 bindsym $w_k+bracketright $exe xfce4-panel -q
+
 # SHOW/HIDE i3bar-------------------------------------------#
 bindsym $w_k+backslash	bar mode toggle
 
 # APPLICATION Launchers=====================================#
 # MAIN Menu Launcher(Works ony when PANEL is ACTIVE)--------#
 bindsym $w_k+Escape $exe xfce4-popup-whiskermenu -p
+
 # STOCK Applications Launcher-------------------------------#
 bindsym $w_k+$a_k+F2 $exe xfce4-appfinder -c
+
 # ALTERNATE Applications Launcher (ROFI)--------------------#
 bindsym $a_k+F2 $exe rofi -show-icons -show drun
 bindsym $w_k+F2 $exe rofi -show-icons -show window
 
 #=======SHORTCUT==========APPLICATION=======================#
-#-----------------------------------------------------------#
-# START a terminal (xfce4-terminal) ------------------------#
-#-----------------------------------------------------------#
-#bindsym $c_k+$a_k+t $exe	xfce4-terminal
-#bindsym $w_k+Return $exe	xfce4-terminal
-#bindsym F12				 $exe	xfce4-terminal --drop-down
-#-----------------------------------------------------------#
 # START a terminal (konsole and yakuake) -------------------#
-#-----------------------------------------------------------#
 bindsym $c_k+$a_k+t $exe	konsole
 bindsym $w_k+Return $exe	konsole
 bindsym F12					$exe	yakuake
+
 # FILE Manager----------------------------------------------#
 bindsym $a_k+Escape $exe	thunar /home/
 bindsym $a_k+F1			$exe	thunar
+
 # VARIOUS Applications--------------------------------------#
 bindsym $w_k+z 			$exe	zenity	--calendar\
 																	--width=562\
@@ -360,12 +352,10 @@ bindsym $a_k+b			$exe google-chrome-stable
 bindsym $a_k+v			$exe code
 
 # Change Network Connection --------------------------------#
-bindsym $c_k+$w_k+$a_k+s $exe\
-	nmcli dev wifi connect starlink
-bindsym $c_k+$w_k+$a_k+w $exe\
-	nmcli dev wifi connect winter
+bindsym $c_k+$w_k+$a_k+s $exe nmcli dev wifi connect <SSID 1>
+bindsym $c_k+$w_k+$a_k+w $exe nmcli dev wifi connect <SSID 2>
 
 # MAKE Some Windows STICKY ---------------------------------#
-#for_window [class="Clementine"] sticky enable
+for_window [class="Clementine"] sticky enable
 
 #END of CONFIGURATION File==================================#
