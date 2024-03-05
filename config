@@ -234,6 +234,7 @@ bindsym $w_k+F11				$exe playerctl -p %any previous
 bindsym $w_k+$a_k+Left	$exe playerctl -p %any previous
 bindsym $w_k+F12				$exe playerctl -p %any next
 bindsym $w_k+$a_k+Right $exe playerctl -p %any next
+
 # SOUND VOLUME Desktop Integration--------------------------#
 # Increase--------------------------------------------------#
 bindsym XF86AudioRaiseVolume	$exe $iv
